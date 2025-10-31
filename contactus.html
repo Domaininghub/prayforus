@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="dark" lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>إتصل بنا - صلّوا لأجلنا</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=church" />
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Karla:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<script>
+  // --- NEW PALETTE CONFIG ---
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          // --- NEW PALETTE ---
+          'isabelline': { DEFAULT: '#edede9', 100: '#34342a', 200: '#676754', 300: '#989881', 400: '#c2c2b5', 500: '#edede9', 600: '#f0f0ed', 700: '#f4f4f2', 800: '#f8f8f6', 900: '#fbfbfb' },
+          'timberwolf': { DEFAULT: '#d6ccc2', 100: '#312921', 200: '#625241', 300: '#937a62', 400: '#b6a391', 500: '#d6ccc2', 600: '#ded6ce', 700: '#e7e0da', 800: '#efebe7', 900: '#f7f5f3' },
+          'linen': { DEFAULT: '#f5ebe0', 100: '#473017', 200: '#8e5f2e', 300: '#c78f52', 400: '#debd99', 500: '#f5ebe0', 600: '#f7efe6', 700: '#f9f3ed', 800: '#fbf7f3', 900: '#fdfbf9' },
+          'champagne_pink': { DEFAULT: '#e3d5ca', 100: '#38291e', 200: '#70523b', 300: '#a87b59', 400: '#c5a891', 500: '#e3d5ca', 600: '#e8ddd4', 700: '#eee6df', 800: '#f4eeea', 900: '#f9f7f4' },
+          'pale_dogwood': { DEFAULT: '#d5bdaf', 100: '#33241b', 200: '#664735', 300: '#986b50', 400: '#ba937c', 500: '#d5bdaf', 600: '#ddcabf', 700: '#e6d7cf', 800: '#eee4df', 900: '#f7f2ef' },
+          
+          // --- MAPPED THEME COLORS (Using New Palette) ---
+          "primary": "#d6ccc2", // timberwolf-DEFAULT
+          "secondary": "#a87b59", // champagne_pink-300
+          "background-light": "#f6f6f8",
+          "background-dark": "#101622",
+          "anf-blue": "#003366",
+          "anf-burgundy": "#800020",
+          "anf-text": "#333333",
+          "anf-background": "#FDFBF7",
+          "brand": {
+            "blue": "#003366",
+            "burgundy": "#800020",
+            "background": "#F8F5F2",
+            "text": "#444444",
+            // --- NEW DARK THEME MAPPING ---
+            "dark-bg": "#33241b", // pale_dogwood-100 (Deep warm brown)
+            "dark-surface": "#38291e", // champagne_pink-100 (Slightly lighter warm brown)
+            "dark-text": "#f5ebe0", // linen-DEFAULT (Soft warm off-white)
+            "dark-subtle": "#d5bdaf" // pale_dogwood-DEFAULT (Muted pinkish-beige)
+          }
+        },
+        fontFamily: {
+          "display": ["Cairo", "Lora", "serif"],
+          "body": ["Cairo", "Karla", "sans-serif"],
+        },
+        borderRadius: {
+          "DEFAULT": "0.5rem",
+          "lg": "0.75rem",
+          "xl": "1rem",
+          "full": "9999px"
+        },
+        boxShadow: {
+          soft: "0 4px 20px rgba(0,0,0,0.2)",
+          // Updated glow to use new primary color
+          glow: "0 0 15px rgba(214, 204, 194, 0.25)", // From timberwolf-DEFAULT
+        },
+      },
+    },
+  }
+</script>
+</head>
+<!-- BODY: Removed bg-brand-dark-bg, as the container below will have the background -->
+<body class="font-body text-brand-dark-text">
+
+<!-- This is the main container, now with the background image -->
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden bg-cover bg-center bg-fixed"
+     style="background-image: url('pictures/light.png');">
+     
+    <!-- This is the dark overlay for readability -->
+    <div class="absolute inset- bg-brand-dark-bg/90 z-0"></div>
+
+    <!-- This container holds all content and sits above the overlay -->
+    <div class="layout-container relative z-10 flex h-full grow flex-col">
+        <div class="flex flex-1 justify-center">
+            <div class="layout-content-container flex flex-col w-full">
+
+                <!-- Header - Copied from aboutus.html for consistency -->
+                <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark-bg/80 border-b border-secondary/40 shadow-soft transition">
+                  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+                    <nav class="flex gap-6 text-sm font-medium">
+                      <!-- Nav link uses mapped colors -->
+                      <a href="aboutus.html" class="hover:text-primary transition">من نحن</a>
+                      <a href="contactus.html" class="hover:text-primary transition">إتصل بنا</a>
+                    </nav>
+                    <!-- Logo link updated to point to index.html -->
+                    <a href="index.html" class="flex items-center gap-2 transition-colors">
+                      <span class="material-symbols-outlined text-primary text-3xl">church</span>
+                      <h1 class="text-primary text-2xl font-bold font-display">Prayforus.help</h1>
+                    </a>
+                  </div>
+                </header>
+
+<!-- Main Content -->
+<main class="flex-grow">
+    <div class="px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+        <div class="max-w-2xl mx-auto">
+            
+            <!-- This is the new "card" wrapper from aboutus.html -->
+            <div class="bg-brand-dark-surface/50 backdrop-blur-md p-8 md:p-12 rounded-xl shadow-lg border border-secondary/0">
+                
+                <h1 class="text-primary text-4xl font-bold font-display text-center mb-10">إتصل بنا</h1>
+                
+                <form class="space-y-6" id="contact-form">
+                    
+                    <!-- Name -->
+                    <label class="flex flex-col">
+                        <p class="text-brand-dark-subtle text-sm font-medium mb-2">الإسم</p>
+                        <!-- INPUT: Updated border, bg, and focus colors -->
+                        <input class="form-input flex w-full text-brand-dark-text focus:outline-none focus:ring-2 focus:ring-primary/50 border border-secondary bg-brand-dark-bg focus:border-primary h-12 px-4 text-base transition-colors" placeholder="" type="text" id="contact-name" required dir="auto"/>
+                    </label>
+
+                    <!-- Email -->
+                    <label class="flex flex-col">
+                        <p class="text-brand-dark-subtle text-sm font-medium mb-2">البريد الإلكتروني</p>
+                        <!-- INPUT: Updated border, bg, and focus colors -->
+                        <input class="form-input flex w-full text-brand-dark-text focus:outline-none focus:ring-2 focus:ring-primary/50 border border-secondary bg-brand-dark-bg focus:border-primary h-12 px-4 text-base transition-colors" placeholder="" type="email" id="contact-email" required dir="ltr"/>
+                    </label>
+
+                    <!-- Message -->
+                    <label class="flex flex-col">
+                        <p class="text-brand-dark-subtle text-sm font-medium mb-2">رسالتك</p>
+                        <!-- TEXTAREA: Updated border, bg, and focus colors -->
+                        <textarea class="form-textarea flex w-full text-brand-dark-text focus:outline-none focus:ring-2 focus:ring-primary/50 border border-secondary bg-brand-dark-bg focus:border-primary px-4 py-3 text-base transition-colors" rows="6" placeholder="اكتب رسالتك هنا..." id="contact-message" required dir="rtl"></textarea>
+                    </label>
+
+                    <!-- Submit Button -->
+                    <div class="pt-4">
+                        <!-- BUTTON: Updated bg, hover, text, and ring colors -->
+                        <button class="w-full bg-secondary hover:bg-champagne_pink-400 text-brand-dark-text font-bold py-4 px-4 rounded-lg focus:outline-none focus:ring-4 focus:ring-offset-2 focus:ring-offset-brand-dark-surface focus:ring-champagne_pink-400/50 transition-all duration-300 ease-in-out transform hover:scale-[1.01] text-lg" type="submit" id="submit-button">
+                            إرسال
+                        </button>
+                    </div>
+
+                    
+                </form>
+                <div id="form-message" class="text-center mt-6 text-lg"></div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<!-- Footer: Copied from aboutus.html for consistency -->
+<footer class="text-center py-8 border-t border-secondary/0 px-4 sm:px-6 lg:px-8">
+<p class="text-sm text-brand-dark-subtle">© 2025 Prayforus.help. جميع الحقوق محفوظة.</p>
+</footer>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Basic form submission handler
+    
+    const form = document.getElementById('contact-form');
+    const messageEl = document.getElementById('form-message');
+    const submitButton = document.getElementById('submit-button');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // SCRIPT: Updated message class to use new palette
+        messageEl.textContent = 'جاري الإرسال...';
+        messageEl.className = 'text-center mt-6 text-lg text-brand-dark-subtle';
+        submitButton.disabled = true;
+        submitButton.textContent = 'جاري الإRS...'; // Changed text to match
+
+        // --- Hook up to Google Apps Script ---
+        const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwFhtocCaCD09hIhsn3ynX1n0Z9mS4U4yXfcx2VznXgeq1wcnwbg3Lfia3bkxx56_QT/exec'; // <-- Replaced placeholder with your URL
+        const formData = new FormData();
+        formData.append('name', document.getElementById('contact-name').value);
+        formData.append('email', document.getElementById('contact-email').value);
+        formData.append('message', document.getElementById('contact-message').value);
+        formData.append('timestamp', new Date().toISOString());
+
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors' // Added no-cors as Apps Script sometimes has CORS issues when posting directly from a browser
+        })
+        .then(response => {
+            // Note: 'no-cors' mode means we can't read the response body.
+            // We'll just assume success if the request itself didn't throw an error.
+            // This is a common pattern for "fire and forget" form submissions to Apps Script.
+            
+            messageEl.textContent = 'تم إرسال رسالتك بنجاح. شكراً لك.';
+            messageEl.className = 'text-center mt-6 text-lg text-green-400';
+            form.reset();
+        })
+        .catch(error => {
+             console.error('Error!', error.message);
+             messageEl.textContent = 'حدث خطأ أثناء الإرسال. يرجى المحاولة مرة أخرى.';
+             messageEl.className = 'text-center mt-6 text-lg text-red-400';
+        })
+        .finally(() => {
+            // Re-enable button after a short delay to prevent spam and show success
+             setTimeout(() => {
+                 submitButton.disabled = false;
+                 submitButton.textContent = 'إرسال';
+                 messageEl.textContent = ''; // Clear message
+             }, 3000);
+        });
+        
+    });
+});
+</script>
+
+</body></html>

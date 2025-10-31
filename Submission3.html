@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html class="dark" lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>تم التسجيل بنجاح</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Lora:ital,wght@0,400..700;1,400..700&amp;family=Karla:ital,wght@0,200..800;1,200..800&amp;display=swap" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            // --- NEW PALETTE ---
+            'isabelline': { DEFAULT: '#edede9', 100: '#34342a', 200: '#676754', 300: '#989881', 400: '#c2c2b5', 500: '#edede9', 600: '#f0f0ed', 700: '#f4f4f2', 800: '#f8f8f6', 900: '#fbfbfb' },
+            'timberwolf': { DEFAULT: '#d6ccc2', 100: '#312921', 200: '#625241', 300: '#937a62', 400: '#b6a391', 500: '#d6ccc2', 600: '#ded6ce', 700: '#e7e0da', 800: '#efebe7', 900: '#f7f5f3' },
+            'linen': { DEFAULT: '#f5ebe0', 100: '#473017', 200: '#8e5f2e', 300: '#c78f52', 400: '#debd99', 500: '#f5ebe0', 600: '#f7efe6', 700: '#f9f3ed', 800: '#fbf7f3', 900: '#fdfbf9' },
+            'champagne_pink': { DEFAULT: '#e3d5ca', 100: '#38291e', 200: '#70523b', 300: '#a87b59', 400: '#c5a891', 500: '#e3d5ca', 600: '#e8ddd4', 700: '#eee6df', 800: '#f4eeea', 900: '#f9f7f4' },
+            'pale_dogwood': { DEFAULT: '#d5bdaf', 100: '#33241b', 200: '#664735', 300: '#986b50', 400: '#ba937c', 500: '#d5bdaf', 600: '#ddcabf', 700: '#e6d7cf', 800: '#eee4df', 900: '#f7f2ef' },
+            
+            // --- MAPPED THEME COLORS (Using New Palette) ---
+            "primary": "#edede9", // isabelline-DEFAULT
+            "secondary": "#a87b59", // champagne_pink-300
+            "background-light": "#f6f6f8",
+            "background-dark": "#101622",
+            "anf-blue": "#003366",
+            "anf-burgundy": "#800020",
+            "anf-text": "#333333",
+            "anf-background": "#FDFBF7",
+            "brand": {
+              "blue": "#003366",
+              "burgundy": "#800020",
+              "background": "#F8F5F2",
+              "text": "#444444",
+              // --- NEW DARK THEME MAPPING ---
+              "dark-bg": "#33241b", // pale_dogwood-100 (Deep warm brown)
+              "dark-surface": "#38291e", // champagne_pink-100 (Slightly lighter warm brown)
+              "dark-text": "#f5ebe0", // linen-DEFAULT (Soft warm off-white)
+              "dark-subtle": "#d5bdaf" // pale_dogwood-DEFAULT (Muted pinkish-beige)
+            }
+          },
+          fontFamily: {
+            "display": ["Cairo", "Lora", "serif"],
+            "body": ["Cairo", "Karla", "sans-serif"],
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-brand-dark-bg font-body text-brand-dark-text bg-cover bg-center bg-no-repeat" 
+      style="background-image: url('pictures/dark.png');">
+
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-10 md:py-20">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1 gap-8">
+<div class="flex flex-col items-center justify-center text-center gap-6">
+<div class="w-20 h-20 rounded-full bg-champagne_pink-300/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-champagne_pink-300" style="font-size: 48px;"> check_circle </span>
+</div>
+<div>
+<p class="text-linen-DEFAULT text-5xl font-display font-black leading-tight tracking-[-0.033em]">تم التسجيل بنجاح</p>
+<p class="text-pale_dogwood-DEFAULT text-lg font-normal leading-normal mt-4 max-w-2xl">شكراً لك على إيداعنا أسماء أحبائك. سيتم ذكرهم في صلواتنا.</p>
+</div>
+</div>
+
+<!-- قسم عرض الأسماء المسجلة - سيتم ملؤه ديناميكياً -->
+<div class="flex flex-col gap-4 p-4 md:p-8 border border-timberwolf-300/20 rounded-xl bg-brand-dark-surface/80">
+<h3 class="text-linen-DEFAULT font-display text-2xl font-bold text-center mb-8">الأسماء المسجلة</h3>
+<div id="registered-names-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- سيتم إضافة الأسماء هنا ديناميكياً -->
+</div>
+</div>
+
+<div class="flex flex-col items-center gap-6 mt-6">
+<div class="flex flex-col sm:flex-row flex-1 gap-3 flex-wrap px-4 py-3 w-full max-w-[600px] justify-center">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-anf-burgundy hover:bg-red-800 text-white text-base font-bold leading-normal tracking-[0.015em] grow" id="back-to-home-btn">
+<a href="index.html" span class="truncate">العودة إلى الرئيسية</span>
+</button>
+</div>
+<div class="flex flex-col items-center gap-4 text-center">
+<p class="text-pale_dogwood-DEFAULT text-lg font-medium">ساعدنا في نشر الكلمة!</p>
+
+<div class="flex items-center gap-4">
+  <!-- Facebook Share -->
+  <a class="flex items-center justify-center w-12 h-12 rounded-full bg-red-800 hover:bg-red-800 transition-colors"
+    href="https://www.facebook.com/sharer/sharer.php?u=https://prayforus.help"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="شارك على فيسبوك"
+  >
+    <svg class="text-linen-DEFAULT" fill="currentColor" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-1.5c-1.38 0-1.5.62-1.5 1.4V12h3l-.5 3h-2.5v6.8c4.56-.93 8-4.96 8-9.8z"></path>
+    </svg>
+  </a>
+
+  <!-- Twitter (X) Share -->
+<a class="flex items-center justify-center w-12 h-12 rounded-full bg-red-800 hover:bg-red-800 transition-colors"
+    href="https://twitter.com/intent/tweet?text=صلّوا+لأجلنا+%7C+Pray+for+Us&url=https://prayforus.help"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="شارك على تويتر"
+  >
+    <svg class="text-linen-DEFAULT" fill="currentColor" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M22.46 6c-.77.35-1.6.58-2.46.67.88-.53 1.56-1.37 1.88-2.38-.83.49-1.74.85-2.7 1.04C18.4 4.6 17.29 4 16.08 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71-.02-1.37-.22-1.95-.55v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.94.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.35 0-.69-.02-1.03-.06C3.44 20.29 5.7 21 8.12 21c7.34 0 11.36-6.08 11.36-11.36 0-.17 0-.34-.01-.51.78-.57 1.45-1.28 1.99-2.09z"></path>
+    </svg>
+  </a>
+
+  <!-- Email Share -->
+ <a class="flex items-center justify-center w-12 h-12 rounded-full bg-red-800 hover:bg-red-800 transition-colors"
+    href="contactus.html"
+    target=""
+    rel="noopener noreferrer"
+    aria-label="شارك عبر البريد الإلكتروني"
+  >
+    <span class="material-symbols-outlined text-linen-DEFAULT" style="font-size: 24px;"> mail </span>
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // دالة لتحويل النص إلى عناصر HTML
+    function displayRegisteredNames() {
+      const container = document.getElementById('registered-names-container');
+      container.innerHTML = ''; // مسح المحتوى الحالي
+      
+      // الحصول على الأسماء من localStorage
+      const savedNames = localStorage.getItem('submittedNames');
+      
+      if (savedNames) {
+        try {
+          const namesArray = JSON.parse(savedNames);
+          
+          if (namesArray.length === 0) {
+            container.innerHTML = '<p class="text-pale_dogwood-400 text-center col-span-full py-8">لم يتم إدخال أي أسماء</p>';
+            return;
+          }
+          
+          // إنشاء عنصر لكل اسم
+          namesArray.forEach(name => {
+            const nameElement = document.createElement('div');
+            nameElement.className = 'group relative bg-red-900 rounded-lg p-4 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden transition-all duration-300 ease-in-out hover:scale-105';
+            
+            nameElement.innerHTML = `
+              <p class="text-linen-DEFAULT text-lg font-bold leading-normal">${name}</p>
+              <div class="absolute inset-0 bg-red-800 bg-opacity-90 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+                <p class="text-linen-DEFAULT text-sm italic">"الراحة الأبدية أعطهم يا رب، ونورك الأزليّ فليضء لهم."</p>
+              </div>
+            `;
+            
+            container.appendChild(nameElement);
+          });
+        } catch (e) {
+          console.error('خطأ في تحليل الأسماء:', e);
+          container.innerHTML = '<p class="text-red-400 text-center col-span-full py-8">حدث خطأ في عرض الأسماء</p>';
+        }
+      } else {
+        // عرض أسماء تجريبية إذا لم تكن هناك أسماء في localStorage
+        const sampleNames = ['يوحنا دحدوح', 'مريم سعد', 'ميشال خوري', 'جورج حنا', 'لينا مراد', 'بطرس يعقوب'];
+        
+        sampleNames.forEach(name => {
+          const nameElement = document.createElement('div');
+          nameElement.className = 'group relative bg-timberwolf-100 rounded-lg p-4 flex flex-col items-center justify-center text-center cursor-pointer overflow-hidden transition-all duration-300 ease-in-out hover:scale-105';
+          
+          nameElement.innerHTML = `
+            <p class="text-linen-DEFAULT text-lg font-bold leading-normal">${name}</p>
+            <div class="absolute inset-0 bg-timberwolf-200 bg-opacity-90 flex items-center justify-center p-4 opacity-0 transition-opacity duration-300 ease-in-out group-hover:opacity-100">
+              <p class="text-linen-DEFAULT text-sm italic">"الراحة الأبدية أعطهم يا رب، ونورك الأزليّ فليضء لهم."</p>
+            </div>
+          `;
+          
+          container.appendChild(nameElement);
+        });
+        
+        // إضافة رسالة توضيحية
+        const message = document.createElement('p');
+        message.className = 'text-pale_dogwood-400 text-sm text-center col-span-full mt-4';
+        message.textContent = 'هذه أسماء تجريبية للعرض. في الاستخدام الفعلي، سيتم عرض الأسماء التي أدخلتها.';
+        container.appendChild(message);
+      }
+    }
+    
+    // عرض الأسماء عند تحميل الصفحة
+    displayRegisteredNames();
+    
+    // زر العودة إلى الصفحة الرئيسية
+    document.getElementById('back-to-home-btn').addEventListener('click', function() {
+      // مسح الأسماء من localStorage بعد عرضها (اختياري)
+      // localStorage.removeItem('submittedNames');
+      
+      // العودة إلى الصفحة الرئيسية
+      const homePages = [
+        'index12.html',
+        'index.html',
+        'home.html',
+        'main.html'
+      ];
+      
+      for (const page of homePages) {
+        try {
+          window.location.href = page;
+          return;
+        } catch (e) {
+          // يستمر في المحاولة
+        }
+      }
+      
+      // إذا فشل كل شيء، يعود إلى المجلد الرئيسي
+      window.location.href = '/';
+    });
+  });
+</script>
+
+</body>
+</html>
