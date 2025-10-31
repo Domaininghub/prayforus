@@ -313,14 +313,43 @@
 </div>
 </div>
 </main>
-<!-- FOOTER: Updated border and text colors -->
-<footer class="text-center py-8 border-t border-brand-dark-bg px-4 sm:px-6 lg:px-8">
-<p class="text-sm text-brand-dark-subtle">© 2025 Prayforus.help. جميع الحقوق محفوظة.</p>
+<footer class="text-center py-8 border-t border-brand-dark-bg text-sm text-brand-dark-subtle">
+  © 2025 Prayforus.help – جميع الحقوق محفوظة.
+
+  <span id="visits" class="block mt-4 text-xl font-semibold text-amber-400 tracking-wide drop-shadow-sm">
+    ✝️ عدد الزائرين المباركين: ...
+  </span>
 </footer>
-</div>
-</div>
-</div>
-</div>
+
+<script>
+const namespace = "prayforus";
+const key = "visits";
+const endpoint = `https://api.counterapi.dev/v2/${namespace}/${key}`;
+
+// Increment the counter and display the total
+fetch(endpoint, { method: "POST" })
+  .then(res => res.json())
+  .then(data => {
+    const visits = data.count ?? data.value ?? "؟";
+
+    // Highlight the number with a soft glow
+    document.getElementById("visits").innerHTML =
+      `✝️ عدد الزائرين المباركين: <span class="text-primary drop-shadow glow">${visits}</span>`;
+  })
+  .catch(() => {
+    document.getElementById("visits").textContent = "عدد الزيارات: غير متاح حالياً";
+  });
+</script>
+
+<style>
+/* Soft glowing gold number for sacred visual harmony */
+.glow {
+  color: #fff8dc; /* Light ivory gold */
+  text-shadow: 0 0 8px rgba(255, 255, 224, 0.4);
+  font-weight: 700;
+}
+</style>
+
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
@@ -547,6 +576,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
