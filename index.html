@@ -329,7 +329,7 @@ fetch(endpoint)
   .then(data => {
     const visits = data.visits ?? "؟";
     document.getElementById("visits").innerHTML =
-      `✝️ عدد الزائرين المباركين: <span class="text-primary drop-shadow glow">${visits}</span>`;
+      `✝️ عدد الزائرين : <span class="text-primary drop-shadow glow">${visits}</span>`;
   })
   .catch(() => {
     document.getElementById("visits").textContent = "عدد الزيارات: غير متاح حالياً";
@@ -571,6 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
