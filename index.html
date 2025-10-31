@@ -322,17 +322,12 @@
 </footer>
 
 <script>
-const namespace = "prayforus";
-const key = "visits";
-const endpoint = `https://api.counterapi.dev/v2/${namespace}/${key}`;
+const endpoint = "https://script.google.com/macros/s/AKfycbzDTZf-AiPLIYHXcKmcaFRd2WJDFuPObYmtDUNJKQlMdlezwN2lGeOQNTn-kvoqyE56/exec";
 
-// Increment the counter and display the total
-fetch(endpoint, { method: "POST" })
+fetch(endpoint)
   .then(res => res.json())
   .then(data => {
-    const visits = data.count ?? data.value ?? "؟";
-
-    // Highlight the number with a soft glow
+    const visits = data.visits ?? "؟";
     document.getElementById("visits").innerHTML =
       `✝️ عدد الزائرين المباركين: <span class="text-primary drop-shadow glow">${visits}</span>`;
   })
@@ -342,13 +337,13 @@ fetch(endpoint, { method: "POST" })
 </script>
 
 <style>
-/* Soft glowing gold number for sacred visual harmony */
 .glow {
-  color: #fff8dc; /* Light ivory gold */
+  color: #fff8dc;
   text-shadow: 0 0 8px rgba(255, 255, 224, 0.4);
   font-weight: 700;
 }
 </style>
+
 
 
 <script>
@@ -576,6 +571,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </body>
 
 </html>
+
 
 
 
