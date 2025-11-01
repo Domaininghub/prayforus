@@ -140,20 +140,54 @@
 <div class="layout-container flex h-full grow flex-col">
 <div class="flex flex-1 justify-center">
 <div class="layout-content-container flex flex-col w-full">
-<!-- HEADER: Updated border color -->
+
+<!-- HEADER: MODIFIED FOR HAMBURGER MENU -->
 <header class="sticky top-0 z-50 backdrop-blur-md bg-brand-dark-bg/80 border-b border-secondary/40 shadow-soft transition">
- <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center px-6 py-4 gap-4 sm:gap-0">
-    <nav class="flex flex-wrap justify-center sm:justify-end gap-x-6 gap-y-2 text-sm font-medium">
+  
+  <!-- Main header bar -->
+  <!-- MODIFIED: Always use justify-between -->
+  <div class="max-w-7xl mx-auto flex items-center px-6 py-4 justify-between">
+    
+    <!-- Desktop Navigation (Hidden on mobile) -->
+    <!-- This now comes first, so it appears on the RIGHT in RTL -->
+    <nav class="hidden sm:flex flex-wrap justify-center sm:justify-start gap-x-6 gap-y-2 text-sm font-medium">
       <a href="aboutus.html" class="text-amber-400 hover:text-primary transition"> من نحن</a>
       <a href="contactus.html" class="text-amber-400 hover:text-primary transition"> إتصل بنا</a>
     </nav>
+    
+    <!-- Mobile Menu Button (Hidden on desktop) -->
+    <!-- This also comes first (but only shows on mobile), so it appears on the RIGHT in RTL -->
+    <button id="menu-toggle" class="sm:hidden text-primary p-2 rounded-md hover:bg-secondary/30 transition" aria-label="Toggle menu">
+      <!-- Hamburger Icon -->
+      <svg id="menu-icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+      <!-- Close Icon (Hidden by default) -->
+      <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+
+    <!-- Logo/Title -->
+    <!-- This comes last, so it appears on the LEFT in RTL -->
+    <!-- ICON REMOVED -->
     <div class="flex items-center gap-2">
-      <!-- Icon uses text-primary, which is mapped -->
-      <span class="material-symbols-outlined text-primary text-3xl">church</span>
       <h1 class="text-primary text-2xl font-bold font-display">Prayforus.help</h1>
     </div>
+
   </div>
+  
+  <!-- Mobile Menu Panel (Hidden by default, shown on toggle) -->
+  <div id="mobile-menu" class="hidden sm:hidden bg-brand-dark-surface/95 backdrop-blur-sm shadow-lg">
+    <nav class="flex flex-col items-center gap-6 px-6 py-8">
+      <a href="aboutus.html" class="text-amber-400 hover:text-primary transition text-lg font-medium"> من نحن</a>
+      <a href="contactus.html" class="text-amber-400 hover:text-primary transition text-lg font-medium"> إتصل بنا</a>
+    </nav>
+  </div>
+
 </header>
+<!-- END OF HEADER MODIFICATION -->
+
 
 <main class="flex-grow">
 <div class="relative">
@@ -565,12 +599,33 @@ document.addEventListener('DOMContentLoaded', function() {
         submitButton.textContent = 'تسجيل';
     });
   });
+
+  // --- ⬇️ NEW HAMBURGER MENU SCRIPT ⬇️ ---
+  const menuToggle = document.getElementById('menu-toggle');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  if (menuToggle && mobileMenu && iconOpen && iconClose) {
+    menuToggle.addEventListener('click', function() {
+      // Toggle the menu's visibility
+      mobileMenu.classList.toggle('hidden');
+      
+      // Toggle the icons
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+  // --- ⬆️ END OF NEW HAMBURGER MENU SCRIPT ⬆️ ---
+
 });
 </script>
 
 </body>
 
 </html>
+
+
 
 
 
